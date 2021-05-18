@@ -17,7 +17,7 @@ class User(db.Model):
         self.email = email
 
     def __repr__(self):
-        return f'<User {self.username}>!'
+        return f'<User {self.username} at {self.email}>!'
 
 class Post(db.Model):
     __tablename__ = "posts"
