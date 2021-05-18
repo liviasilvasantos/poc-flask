@@ -1,10 +1,10 @@
 from flask import render_template
 from src.app import application
 
-@application.route('/', defaults={"user":None})
-@application.route('/index/<user>')
-def index(user):
-    return render_template('base.html', user=user)
+@application.route('/')
+@application.route('/index')
+def index():
+    return render_template('index.html')
 
 
 @application.route('/login')
