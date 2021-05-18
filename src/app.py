@@ -1,7 +1,8 @@
-from flask import Flask
+from flask import Flask, app
 from src.config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate #, MigrateCommand
+from flask_login import LoginManager
 #from flask_script import Manager
 
 #Star the flask app
@@ -17,6 +18,8 @@ migrate = Migrate(application, db)
 #manager = Manager(application)
 #manager.add_command("db", MigrateCommand)
 
+loginManager = LoginManager()
+loginManager.init_app(application)
 
 from src.models import tables, forms
 from src.controllers import hello, index
